@@ -1,0 +1,64 @@
+body{
+    background-image:url(../img/BG.png) ;
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+    background-repeat:no-repeat;
+    
+}
+a{
+    text-decoration:none;
+}
+.bt-back{
+    
+    height:34px;
+    width:210px;
+    line-height:34px;
+    display:inline-block;
+}
+
+.bt-back:hover{
+ border-bottom:2px solid #cacfd9;
+}
+.bt-back:active{
+    position:relative;
+    border:none;
+    top:1;
+}
+
+.box {
+    background-color:#FFFFFF;
+    border-radius:13px;
+    width:550px;
+}
+.logo h5{
+    letter-spacing:2px;
+    font-weight:600;
+    font-color:#222222;
+}
+
+.header-title h4{
+font-weight:600;
+font-color:#222222;
+}
+
+button{
+    width:100%;
+}
+.btn-change{
+    height:34px;
+    width:210px;
+}
+
+@media all and (max-width:670px) {
+    .box{
+    
+        width:400px;
+    }
+    .header-title h4{
+            text-align:center;
+        }
+    footer span{
+            font-size:8px;
+        }
+    
+  }

@@ -1,0 +1,536 @@
+/* custom css for all pages */
+
+.bg-custom {
+    position: relative;
+}
+
+.pd-card {
+    padding: 5px;
+}
+
+.merah {
+    background-color: #ff5454;
+}
+
+.card-custom {
+    padding: 1rem;
+}
+
+.card-header-custom {
+    padding: 1rem 0;
+}
+
+.card-body-custom {
+    padding: 0 1rem 1rem 1rem;
+}
+
+.card-body-custom .col-4 {
+    padding-bottom: 1rem;
+}
+
+.card-body-custom p {
+    padding: 0;
+    margin: 0;
+    color: #dc3545;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.card-body-custom span {
+    color: slategray;
+    font-size: 10px;
+    font-weight: 300;
+}
+
+.text-color-red {
+    color: #dc3545;
+}
+
+/* navbar-admin */
+.notif-icon {
+    position: relative;
+}
+
+.notif-tick {
+    background-color: #fab947;
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: auto;
+    padding: 0.25rem;
+    border-radius: 100%;
+    z-index: 250;
+}
+
+/* profilpage */
+.profile .page-title a {
+    color: #dc3545;
+}
+
+.profile .page-title a,
+.profile .page-title span {
+    margin: 0;
+}
+
+.card-header-form {
+    border-radius: 0;
+    border-bottom: 1px solid #eff2f5;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: transparent;
+    padding: 0.5rem 1rem;
+    margin-bottom: 0;
+}
+
+.card-header-form h6 {
+    margin: 0;
+}
+
+.custom-form {
+    padding: 0 7rem;
+}
+
+.btn-bg-danger {
+    color: #eff2f5;
+}
+
+/* Instansi Page */
+.btn-collapse {
+    padding: 0.25rem !important;
+    background-color: rgb(255, 255, 255) !important;
+    border: 2px solid #ff5454 !important;
+}
+
+.kontak {
+    color: #dc3545;
+}
+
+.online {
+    color: rgb(50, 219, 81);
+}
+
+.offline {
+    color: black;
+}
+
+.hidden {
+    display: none;
+}
+
+.shown {
+    display: block;
+}
+
+.image-avatar {
+    border-radius: 50%;
+    height: 6rem;
+}
+
+.user-details p {
+    margin: 0;
+    padding: 0;
+}
+
+.bg-pink {
+    background-color: #FFE7E7;
+    height: 100%;
+    align-content: center;
+    border-radius: 5px;
+}
+
+.bg-pink p {
+    margin: 0 1rem;
+}
+
+.btn-green {
+    background-color: #27AE60;
+    padding: 1rem !important;
+}
+
+.btn-orange {
+    background-color: #FCB03F;
+    padding: 1rem !important;
+}
+
+hr.custom {
+    border-top: 2px solid #E5E8F2;
+}
+
+.bg-grey {
+    background-color: #E5E8F2;
+    text-align: center;
+    border-radius: 5px;
+    height: 100%;
+    padding-top: 1rem;
+}
+
+.bg-yellow {
+    background-color: #FFF8E3;
+    text-align: left;
+    border-radius: 5px;
+    height: 100%;
+    padding-top: 1rem;
+}
+
+/* HALAMAN PELAPOR */
+.all-aduan {
+    height: 150px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.bg-ash {
+    background-color: #f5f5f5;
+}
+
+.bg-ash .text-red {
+    color: #dc3545;
+}
+
+.bg-ash .text-ash {
+    color: #707070;
+}
+
+/* HALAMAN PANDUAN */
+.btn-white {
+    background-color: #ffffff;
+}
+
+.btn-wrap {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.btn-wrap input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    background-color: #707070;
+}
+
+.btn-outline-danger {
+    border: 1px solid #dc3545 !important;
+}
+
+.all-panduan .card-header {
+    padding-bottom: 0.75rem !important;
+    padding-top: 0 !important;
+    min-height: 0 !important;
+}
+
+.all-panduan .card-header p {
+    margin-bottom: 0 !important;
+}
+
+.all-panduan .card-footer {
+    padding-top: 0.75rem !important;
+    padding-bottom: 0 !important;
+    min-height: 0 !important;
+}
+
+/* HALAMAN ADUAN */
+.wider-fluid {
+    width: 100% !important;
+}
+
+.btn-badge {
+    background-color: whitesmoke;
+    color: #707070;
+    font-size: 11px;
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.25rem !important;
+    margin: 0 5px !important;
+}
+
+.btn-badge-active {
+    background-color: rgb(255, 209, 209);
+    color: #b53232;
+    font-size: 11px;
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.25rem !important;
+    margin: 0 5px !important;
+}
+
+.btn-badge:hover {
+    background-color: rgb(255, 209, 209);
+    color: #b53232;
+    font-size: 11px;
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.25rem !important;
+    margin: 0 5px !important;
+}
+
+.search-box {
+    background-color: #fcfcfc;
+    border-radius: 5px;
+    border: 0;
+}
+
+.search-box input {
+    background-color: #F3F6FB !important;
+}
+
+.search-box .btn-searchbox {
+    border: 1px solid #dc3545 !important;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #dc3545;
+    padding: 0.5rem !important;
+}
+
+.list-aduan {
+    max-height: 55vh;
+}
+
+.list-aduan .text-red {
+    color: #dc3545;
+}
+
+.list-aduan .text-ash {
+    color: #707070;
+}
+
+.card-height {
+    min-height: 60vh;
+}
+
+.card-height .overflow-auto {
+    width: 100%;
+    height: 50vh;
+}
+
+.card-height .red-badge {
+    background-color: #eed2d5;
+    color: #dc3545;
+    border-radius: 5px;
+}
+
+.card-height .purple-badge {
+    background-color: #d4b5f8;
+    color: #8f5bcb;
+    border-radius: 5px;
+}
+
+.card-height .brown-badge {
+    background-color: #f7d1be;
+    color: #7e5c29;
+    border-radius: 5px;
+}
+
+.card-height .blue-badge {
+    background-color: #bedcf7;
+    color: #29567e;
+    border-radius: 5px;
+}
+
+.card-height .yellow-badge {
+    background-color: #f7e5be;
+    color: #92902d;
+    border-radius: 5px;
+}
+
+.card-height .green-badge {
+    background-color: #bef7c3;
+    color: #2d925b;
+    border-radius: 5px;
+}
+
+.card-height .pink-badge {
+    background-color: #f7beec;
+    color: #c227b5;
+    border-radius: 5px;
+}
+
+.card-height .data-aduan th {
+    width: 15%;
+    font-weight: 400;
+}
+
+.card-height .img-lampiran {
+    width: 250px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.btn-status {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    background-color: rgb(205, 223, 241);
+}
+
+.btn-link-card {
+    background-color: transparent;
+    color: #b53232;
+    padding: 0 0.25rem;
+    margin: 0;
+    border: none;
+    text-align: center;
+}
+
+.btn-link-card:hover {
+    background-color: transparent;
+    color: #4d1313;
+    padding: 0 0.25rem;
+    margin: 0;
+    border: none;
+    text-align: center;
+}
+
+.btn-tolak {
+    border: 1px solid #dc3545 !important;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #dc3545;
+    padding: 0.75rem 0.5rem !important;
+    font-size: 12px;
+}
+
+.btn-disposisi {
+    border: 1px solid #dc3545 !important;
+    border-radius: 5px;
+    background-color: #dc3545;
+    color: #ffffff;
+    padding: 0.75rem 0.5rem !important;
+    font-size: 12px;
+}
+
+.form-search .form-filter {
+    border-width: 1px !important;
+    border-color: #C9CEE4 !important;
+    background-color: white !important;
+    color: #999dae !important;
+}
+
+/* Admin - Detail Aduan */
+#nav-tabContent #detail {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.bg-custom-grey {
+    background-color: #F3F6FB;
+    height: 400px;
+}
+
+.bg-chat-user {
+    background-color: #FFFFFF;
+}
+
+.bg-chat-admin {
+    background-color: #FFE7E7;
+}
+
+.user-name {
+    font-weight: 600;
+    margin-bottom: 0.25rem !important;
+    font-size: 15px;
+}
+
+.user-time {
+    font-weight: 400;
+    margin-bottom: 0.25rem !important;
+    font-size: 13px;
+    color: #898EA3;
+}
+
+#diskusiPelapor .btn-danger {
+    background-color: #E93838;
+}
+
+.status-disposisi {
+    color: #8e2ddb;
+    font-weight: 500;
+    font-size: 16px;
+    margin-bottom: 0.25rem !important;
+}
+
+.text-disposisi {
+    color: #8e2ddb;
+}
+
+.status-verifikasi {
+    color: #2d9cdb;
+    font-weight: 500;
+    font-size: 16px;
+    margin-bottom: 0.25rem !important;
+}
+
+.text-verifikasi {
+    color: #2d9cdb;
+}
+
+.status-diproses {
+    color: #fcb03f;
+    font-weight: 500;
+    font-size: 16px;
+    margin-bottom: 0.25rem !important;
+}
+
+.text-diproses {
+    color: #fcb03f;
+}
+
+.status-selesai {
+    color: #27ae60;
+    font-weight: 500;
+    font-size: 16px;
+    margin-bottom: 0.25rem !important;
+}
+
+.text-selesai {
+    color: #27ae60;
+}
+
+.status-ditolak {
+    color: #e93838;
+    font-weight: 500;
+    font-size: 16px;
+    margin-bottom: 0.25rem !important;
+}
+
+.text-ditolak {
+    color: #e93838;
+}
+
+.status-dikembalikan {
+    color: #d854bc;
+    font-weight: 500;
+    font-size: 16px;
+    margin-bottom: 0.25rem !important;
+}
+
+.text-dikembalikan {
+    color: #d854bc;
+}
+
+.datetime-text {
+    color: #898EA3;
+    font-size: 12px;
+    margin-bottom: 0.25rem imo !important;
+}
+
+.username-text {
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 0.25rem !important;
+}
+
+.notes-text {
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 0.25rem !important;
+}
