@@ -51395,8 +51395,8 @@ select.form-control.has-value {
 .gradient-overlay:before {
   position: absolute;
   content: '';
-  background-image: -webkit-gradient(linear, left top, right top, from(#031974), to(#1934a7));
-  background-image: linear-gradient(90deg, #031974, #1934a7);
+  background-image: -webkit-gradient(linear, left top, right top, from(#e70712), to(#E77471));
+  background-image: linear-gradient(135deg, #e70712, #F75D59, #E77471);
   width: 100%;
   height: 100%;
   top: 0;
@@ -52633,8 +52633,8 @@ svg.shape-bg, svg.promo-bg {
 
 /* line 1483, src/assets/scss/custom/_style.scss */
 .gradient-overly-right:before {
-  background: -webkit-gradient(linear, left top, right top, from(#031974), to(rgba(25, 52, 167, 0.5)));
-  background: linear-gradient(90deg, #031974, rgba(25, 52, 167, 0.5));
+  background: -webkit-gradient(linear, left top, right top, from(#F70D1A), to(#E77471));
+  background: linear-gradient(135deg, #F70D1A, #F75D59, #E77471);
 }
 
 /* line 1486, src/assets/scss/custom/_style.scss */
@@ -54044,7 +54044,7 @@ ul.disc-style li {
             17. PRELOADER CSS
 ============================================*/
 /* line 2617, src/assets/scss/custom/_style.scss */
-#preloader {
+/* #preloader {
   position: fixed;
   top: 0;
   left: 0;
@@ -54052,18 +54052,18 @@ ul.disc-style li {
   height: 100%;
   z-index: 9999;
   background: #fff;
-}
+} */
 
 /* line 2627, src/assets/scss/custom/_style.scss */
-.loader1 {
+/* .loader1 {
   display: block;
   position: relative;
   left: 45%;
   top: 50%;
-}
+} */
 
 /* line 2634, src/assets/scss/custom/_style.scss */
-.loader1 span {
+/* .loader1 span {
   vertical-align: middle;
   border-radius: 100%;
   display: inline-block;
@@ -54072,44 +54072,44 @@ ul.disc-style li {
   margin: 3px 2px;
   -webkit-animation: loader1 0.8s linear infinite alternate;
   animation: loader1 0.8s linear infinite alternate;
-}
+} */
 
 /* line 2646, src/assets/scss/custom/_style.scss */
-.loader1 span:nth-child(1) {
+/* .loader1 span:nth-child(1) {
   -webkit-animation-delay: -1s;
   animation-delay: -1s;
   background: rgba(41, 103, 230, 0.6);
-}
+} */
 
 /* line 2652, src/assets/scss/custom/_style.scss */
-.loader1 span:nth-child(2) {
+/* .loader1 span:nth-child(2) {
   -webkit-animation-delay: -0.8s;
   animation-delay: -0.8s;
   background: rgba(41, 103, 230, 0.8);
-}
+} */
 
 /* line 2658, src/assets/scss/custom/_style.scss */
-.loader1 span:nth-child(3) {
+/* .loader1 span:nth-child(3) {
   -webkit-animation-delay: -0.26666s;
   animation-delay: -0.26666s;
   background: #2967e6;
-}
+} */
 
 /* line 2664, src/assets/scss/custom/_style.scss */
-.loader1 span:nth-child(4) {
+/* .loader1 span:nth-child(4) {
   -webkit-animation-delay: -0.8s;
   animation-delay: -0.8s;
   background: rgba(41, 103, 230, 0.8);
-}
+} */
 
 /* line 2671, src/assets/scss/custom/_style.scss */
-.loader1 span:nth-child(5) {
+/* .loader1 span:nth-child(5) {
   -webkit-animation-delay: -1s;
   animation-delay: -1s;
   background: rgba(41, 103, 230, 0.4);
-}
+} */
 
-@keyframes loader1 {
+/* @keyframes loader1 {
   from {
     -webkit-transform: scale(0, 0);
             transform: scale(0, 0);
@@ -54127,7 +54127,7 @@ ul.disc-style li {
   to {
     -webkit-transform: scale(1, 1);
   }
-}
+} */
 
 /*=========================================
           18. DOMAIN SEARCH FROM

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pegawai;
+use App\Models\Province;
+use App\Models\Regency;
 use Illuminate\Http\Request;
 
 class PegawaiController extends Controller
@@ -12,8 +14,22 @@ class PegawaiController extends Controller
      */
     public function index()
     {
-        $pegawai = Pegawai::all();
-        return view('admin.pegawai.index',['pegawai'=>$pegawai]);
+        $pegawai = Pegawai::paginate(10)->withQueryString();
+        return view('admin.pegawai.index',compact('pegawai'), [
+            'active' => 'pegawai'
+        ]);
+    }
+    public function provinsi()
+    {
+        $data = Province::where('name', 'LIKE', '%'. request('q').'%')->paginate(10);
+
+        return response()->json($data);
+    }
+    public function regency($id)
+    {
+        $data = Regency::where('province_id', $id)->where('name', 'LIKE', '%'. request('q').'%')->paginate(10);
+
+        return response()->json($data);
     }
 
     /**
@@ -21,7 +37,9 @@ class PegawaiController extends Controller
      */
     public function create()
     {
-        return view('admin.pegawai.create');
+        return view('admin.pegawai.create', [
+            'active' => 'pegawai'
+        ]);
     }
 
     /**
@@ -31,16 +49,16 @@ class PegawaiController extends Controller
     {
         $validatedData = $request->validate([
             'name'  =>  'required',
-            'tempat_lahir'  =>  'required',
-            'tanggal_lahir'  =>  'required',
-            'jabatan'  =>  'required',
-            'instansi'  =>  'required',
-            'penandatanganan_sertifikat'  =>  'required',
-            'tanggal_pelaksanaan'  =>  'required',
-            'jumlah_jam_pelajaran'  =>  'required',
-            'instansi_penyelenggara'  =>  'required',
-            'jenis_diklat'  =>  'required',
-            'persentase_penilaian'  =>  'required',
+            'nik_nip'  =>  'nullable|max:18',
+            'instansi'  =>  'nullable',
+            'province_id'  =>  'nullable',
+            'regency_id'  =>  'nullable',
+            'kode_verifikasi'  =>  'nullable',
+            'nomor_sertifikat'  =>  'nullable',
+            'jenis_diklat'  =>  'nullable',
+            'tanggal_pelaksanaan'  =>  'nullable',
+            'ditandatangani_oleh'  =>  'nullable',
+            'persentase_penilaian'  =>  'nullable',
         ]);
 
         Pegawai::create($validatedData);
@@ -55,7 +73,10 @@ class PegawaiController extends Controller
     public function show($id)
     {
         $pegawai = Pegawai::find($id);
-        return view('admin.pegawai.show',['pegawai' => $pegawai]);
+        return view('admin.pegawai.show',[
+            'pegawai' => $pegawai,
+            'active' => 'pegawai'
+        ]);
     }
 
     /**
@@ -64,7 +85,10 @@ class PegawaiController extends Controller
     public function edit($id)
     {
         $pegawai = Pegawai::find($id);
-        return view('admin.pegawai.edit',['pegawai' => $pegawai]);
+        return view('admin.pegawai.edit',[
+            'pegawai' => $pegawai,
+            'active' => 'pegawai'
+        ]);
     }
 
     /**
@@ -74,33 +98,17 @@ class PegawaiController extends Controller
     {
         $this->validate($request,[
             'name'  =>  'required',
-            'tempat_lahir'  =>  'required',
-            'tanggal_lahir'  =>  'required',
-            'jabatan'  =>  'required',
+            'nik_nip'  =>  'required|max:18',
             'instansi'  =>  'required',
-            'penandatanganan_sertifikat'  =>  'required',
-            'tanggal_pelaksanaan'  =>  'required',
-            'jumlah_jam_pelajaran'  =>  'required',
-            'instansi_penyelenggara'  =>  'required',
-            'jenis_diklat'  =>  'required',
-            'persentase_penilaian'  =>  'required'
+            'province_id'  =>  'required',
+            'regency_id'  =>  'required',
+            'kode_verifikasi'  =>  'nullable',
+            'nomor_sertifikat'  =>  'nullable',
+            'jenis_diklat'  =>  'nullable',
+            'tanggal_pelaksanaan'  =>  'nullable',
+            'ditandatangani_oleh'  =>  'nullable',
+            'persentase_penilaian'  =>  'nullable',
         ]);
-
-        // cara 1
-        // $pegawai = Pegawai::find($id);
-        // $pegawai->name = $request->name;
-        // $pegawai->tempat_lahir = $request->tempat_lahir;
-        // $pegawai->tanggal_lahir = $request->tanggal_lahir;
-        // $pegawai->jabatan = $request->jabatan;
-        // $pegawai->instansi = $request->instansi;
-        // $pegawai->penandatanganan_sertifikat = $request->penandatanganan_sertifikat;
-        // $pegawai->tanggal_pelaksanaan = $request->tanggal_pelaksanaan;
-        // $pegawai->jumlah_jam_pelajaran = $request->jumlah_jam_pelajaran;
-        // $pegawai->instansi_penyelenggara = $request->instansi_penyelenggara;
-        // $pegawai->jenis_diklat = $request->jenis_diklat;
-        // $pegawai->persentase_penilaian = $request->persentase_penilaian;
-
-        // $pegawai->save();
 
         $pegawai = Pegawai::find($id);
         $pegawai->update($request->all());
@@ -121,22 +129,8 @@ class PegawaiController extends Controller
         ->with('info', 'Data Berhasil di Hapus');
     }
 
-    public function search(Request $request) 
+    public function search(Request $request)
     {
-
-        // $searchQuery = $request->input('search');
-
-        // $query = Pegawai::query();
-
-        // if ($searchQuery) {
-        //     $query->where('name', 'LIKE', "%$searchQuery%")
-        //           ->orWhere('jabatan', 'LIKE', "%$searchQuery%")
-        //           ->orWhere('instansi', 'LIKE', "%$searchQuery%");
-        // }
-
-        // $pegawai = $query->get();
-
-        // return view('admin.pegawai.index', compact('pegawai'));
 
         $searchQuery = $request->input('search');
 
@@ -151,9 +145,9 @@ class PegawaiController extends Controller
         $pegawai = $query->get();
 
         return view('admin.pegawai.search_result', compact('pegawai'));
+
     }
 }
 
 
-          
-            
+

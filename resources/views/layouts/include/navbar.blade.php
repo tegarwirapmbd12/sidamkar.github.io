@@ -14,28 +14,23 @@
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
-      <!-- Navbar Search -->
-      {{-- <li class="nav-item">
-        <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-          <i class="fas fa-search"></i>
-        </a>
-        <div class="navbar-search-block">
-          <form class="form-inline">
-            <div class="input-group input-group-sm">
-              <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-              <div class="input-group-append">
-                <button class="btn btn-navbar" type="submit">
-                  <i class="fas fa-search"></i>
-                </button>
-                <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                  <i class="fas fa-times"></i>
-                </button>
-              </div>
-            </div>
+      @auth
+      <div class="btn-group">
+        <button type="button" class="btn btn-default">{{ Auth()->user()->name }}</button>
+        <button type="button" class="btn btn-default dropdown-toggle dropdown-icon" data-toggle="dropdown">
+          <span class="sr-only">Toggle Dropdown</span>
+        </button>
+        <div class="dropdown-menu" role="menu">
+            <li><a class="dropdown-item" href="/dashboard"><i class="bi bi-layout-text-window"></i>Profil</a></li>
+              <li><hr class="dropdown-divider"></li>
+            <form action="/logout" method="post">
+            @csrf
+            <button type="submit" class="dropdown-item">Logout</button>
           </form>
         </div>
-      </li> --}}
+      </div>
+      @endauth
+
     </ul>
   </nav>
 
-  

@@ -14,16 +14,16 @@ return new class extends Migration
         Schema::create('pegawais', function (Blueprint $table) {
             $table->id();
             $table->string('name')->required();
-            $table->string('tempat_lahir')->required();
-            $table->date('tanggal_lahir')->required();
-            $table->string('jabatan')->required();
-            $table->string('instansi')->required();
-            $table->string('penandatanganan_sertifikat')->required();
-            $table->date('tanggal_pelaksanaan')->required();
-            $table->integer('jumlah_jam_pelajaran')->required();
-            $table->string('instansi_penyelenggara')->required();
-            $table->string('jenis_diklat')->required();
-            $table->integer('persentase_penilaian')->required();
+            $table->unsignedBigInteger('nik_nip')->nullable();
+            $table->string('instansi')->nullable();
+            $table->foreignId('province_id')->nullable();
+            $table->foreignId('regency_id')->nullable();
+            $table->string('kode_verifikasi')->nullable();
+            $table->string('nomor_sertifikat')->nullable();
+            $table->string('jenis_diklat')->nullable();
+            $table->string('tanggal_pelaksanaan')->nullable();
+            $table->string('ditandatangani_oleh')->nullable();
+            $table->integer('persentase_penilaian')->nullable();
             $table->timestamps();
         });
     }

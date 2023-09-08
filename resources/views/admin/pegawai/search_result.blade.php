@@ -29,15 +29,15 @@
     
     @if (count($pegawai) > 0)
     <div class="card-body table-responsive p-0">
-      <table id="dataTable" class="table table-hover">
+      <table id="dataTable" class="table table-hover" id="searchResults">
         <thead>
           <tr>  
             <th scope="col">No</th>
-            <th scope="col">Nama</th>
-            <th scope="col">Tempat Lahir</th>
-            <th scope="col">Tanggal Lahir</th>
-            <th scope="col">Jabatan</th>
-            <th scope="col">Instansi</th>
+            <th scope="col" style="width: 25%;">Nama</th>
+            {{-- <th scope="col">Tempat Lahir</th>
+            <th scope="col">Tanggal Lahir</th> --}}
+            <th scope="col" style="width: 25%;">Jabatan</th>
+            <th scope="col" style="width: 25%;">Instansi</th>
             {{-- <th scope="col">Penandatanganan Sertifikat</th>
             <th scope="col">Tanggal Pelaksanaan</th>
             <th scope="col">Jumlah Jam Pelajaran</th>
@@ -47,22 +47,22 @@
           </tr>
         </thead>
         <?php $i = 1; ?>
-        @foreach ($pegawai as $pegawai)
+        @foreach ($pegawai as $pegawaian)
         <tbody>
             <tr class="clickable-row">
               <td><?= $i; ?></td>
-              <td class="wrap-text clickable-cell">{{ $pegawai->name }}</td>
-              <td>{{ $pegawai->tempat_lahir }}</td>
-              <td>{{ $pegawai->tanggal_lahir }}</td>
-              <td class="wrap-text">{{ $pegawai->jabatan }}</td>
-              <td class="wrap-text">{{ $pegawai->instansi }}</td>
+              <td class="wrap-text clickable-cell">{{ $pegawaian->name }}</td>
+              {{-- <td>{{ $pegawaian->tempat_lahir }}</td>
+              <td>{{ $pegawaian->tanggal_lahir }}</td> --}}
+              <td class="wrap-text">{{ $pegawaian->jabatan }}</td>
+              <td class="wrap-text">{{ $pegawaian->instansi }}</td>
               {{-- <td>{{ $pegawai->penandatanganan_sertifikat }}</td>
               <td>{{ $pegawai->tanggal_pelaksanaan }}</td>
               <td>{{ $pegawai->jumlah_jam_pelajaran }}</td>
               <td>{{ $pegawai->instansi_penyelenggara }}</td>
               <td>{{ $pegawai->jenis_diklat }}</td>
               <td>{{ $pegawai->persentase_penilaian }}</td> --}}
-              <td><a href="/pegawai/{{ $pegawai->id }}/delete" class="btn btn-danger" onclick="return confirm('Apakah yakin {{ $pegawai->name }} ingin dihapus?');"> <i class="fas fa-trash"></i></a><a href="/pegawai/{{ $pegawai->id }}/show" class="btn btn-info"> <i class="fas fa-eye"></i></a></td>
+              <td><a href="/pegawai/{{ $pegawaian->id }}/delete" class="btn btn-danger" onclick="return confirm('Apakah yakin {{ $pegawaian->name }} ingin dihapus?');"> <i class="fas fa-trash"></i></a><a href="/pegawai/{{ $pegawaian->id }}/show" class="btn btn-info"> <i class="fas fa-eye"></i></a></td>
             </tr>
             <?php $i++; ?>    
             @endforeach

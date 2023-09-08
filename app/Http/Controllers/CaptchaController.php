@@ -8,7 +8,7 @@ class CaptchaController extends Controller
 {
    public function index(){
     
-    return view('auth.login');
+    return view('index');
    }
    public function reloadCaptcha(){
 
@@ -18,7 +18,7 @@ class CaptchaController extends Controller
    public function post(Request $request){
       
       $request->validate([
-         'username' => 'required',
+         'email' => 'required',
          'password' => 'required|min:6',
          'captcha' => 'required|captcha',
       ]);

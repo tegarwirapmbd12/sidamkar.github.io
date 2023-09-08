@@ -8,13 +8,24 @@
     .wrapped-cell {
         word-wrap: break-word; /* Mengatur wrapping teks */
     }
+    .sidebar{
+        background: linear-gradient(135deg, #F70D1A, #F75D59, #E77471);
+    }
+    .main-sidebar{
+        background: linear-gradient(135deg, #F70D1A, #F75D59, #E77471);
+    }
+    .loading-wrapper{
+        display: none;
+    }
+
+
 
     /* klik tabel */
     /* .clickable-cell {
         cursor: pointer;
         background-co: blue;
     } */
-    
+
   </style>
 
 
@@ -40,6 +51,8 @@
   <link rel="stylesheet" href="{{ asset('AdminLTE-3.2.0/plugins/summernote/summernote-bs4.min.css') }}">
   {{-- success added and updated --}}
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastr@2.1.4/toastr.min.css">
+  {{-- select2 --}}
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -50,24 +63,16 @@
   </div>
 
   <!-- Navbar -->
-  
+
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  
+
   @include('layouts.include.navbar')
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">Data Pegawai</h1>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
+    @yield('title')
     <!-- /.content-header -->
 
     <!-- Main content -->
@@ -75,7 +80,7 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
- 
+
   @include('layouts.include.sidebar')
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
@@ -118,52 +123,54 @@
 <script src="{{ asset('AdminLTE-3.2.0/dist/js/adminlte.js') }}"></script>
 {{-- script success added and updated --}}
 <script src="https://cdn.jsdelivr.net/npm/toastr@2.1.4/toastr.min.js"></script>
+{{-- select2 --}}
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#selectProv").select2({
+            placeholder: 'Pilih Provinsi',
+            ajax : {
+                url: "{{ route('provinsi.index') }}",
+                processResults: function({data}){
+                    return{
+                        results: $.map(data, function(item){
+                            return {
+                                id: item.id,
+                                text: item.name
+                            }
+                        })
+                    }
 
-{{-- klik tabel --}}
-{{-- <script>
-  document.addEventListener("DOMContentLoaded", function () {
-      var clickableCells = document.querySelectorAll(".clickable-cell");
+                }
+            }
+        });
 
-      clickableCells.forEach(function (cell) {
-          cell.addEventListener("click", function () {
-              // Aksi yang ingin Anda lakukan saat elemen diklik
-              alert("Anda mengklik: " + cell.innerText);
-          });
-      });
-  });
-</script> --}}
+        $("#selectProv").change(function(){
+            let id = $('#selectProv').val();
 
-{{-- script search --}}
-{{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
+            $("#selectRegenc").select2({
+            placeholder: 'Pilih Kota/Kabupaten',
+            ajax : {
+                url: "{{ url('selectRegenc') }}/"+ id,
+                processResults: function({data}){
+                    return{
+                        results: $.map(data, function(item){
+                            return {
+                                id: item.id,
+                                text: item.name
+                            }
+                        })
+                    }
 
-{{-- <script>
-  $(document).ready(function () {
-      const searchInput = $('#searchInput');
-      const dataTable = $('#dataTable');
+                }
+            }
+        });
+        });
+    });
 
-      searchInput.on('input', function () {
-          const keyword = searchInput.val().trim();
-
-          if (keyword === '') {
-              dataTable.hide();
-          } else {
-              // Lakukan pencarian dengan AJAX
-              $.ajax({
-                  url: '/pegawai/search',
-                  method: 'GET',
-                  data: { keyword: keyword },
-                  success: function (data) {
-                      // Tampilkan data hasil pencarian di dalam tabel
-                      dataTable.html(data).show();
-                  }
-              });
-          }
-      });
-  });
-</script> --}}
-<!-- AdminLTE for demo purposes -->
-{{-- <script src="{{ asset('AdminLTE-3.2.0/dist/js/demo.js') }}"></script> --}}
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-{{-- <script src="{{ asset('AdminLTE-3.2.0/dist/js/pages/dashboard.js') }}"></script> --}}
+</script>
 </body>
 </html>
+
+
+
